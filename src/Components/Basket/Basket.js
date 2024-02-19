@@ -5,7 +5,8 @@ function Basket({basket, backProduct}) {
   return (
     <div className="BASKET">
       {basket.map((product, index) => (
-        <div key={index} className="BASKET-CONTENT">
+        <div key={index} 
+        className="BASKET-CONTENT">
           <img src={product.image} />
           <p>Name: {product.name}</p>
           <p>Price: {product.price}</p>

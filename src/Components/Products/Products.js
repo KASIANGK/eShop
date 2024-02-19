@@ -1,4 +1,3 @@
-import React from 'react';
 import './Products.css'
 
 function Products({product, buyProduct}) {
@@ -7,14 +6,18 @@ function Products({product, buyProduct}) {
       {product.map((product) => (
         <div 
         key={product.name} 
-        className={product.stock === 0 ? 'OUT-OF-STOCK' : (product.stock === 1 ? 'LOW-STOCK' : 'CARD')}>
+        className={product.stock === 0 ? 'OUT-OF-STOCK' 
+        : (product.stock === 1 ? 'LOW-STOCK' 
+        : 'CARD')
+        }>
           <img src={product.image} />
           <h3>{product.name}</h3>
           <p>Price: {product.price}</p>
           <p>Stock: {product.stock}</p>
-          {product.stock > 0 && (
+          {product.stock > 0 ? 
             <button onClick={() => buyProduct(product)}>BUY</button>
-          )}
+            : ""
+          }
         </div>
       ))}
     </div>

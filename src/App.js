@@ -61,10 +61,7 @@ function App() {
     updatedBasket.splice(productIndex, 1)
     setBasket(updatedBasket)
   }
-
     setMoney(money + product.price)
-    
-
   }
   
 
@@ -72,17 +69,22 @@ function App() {
   return (
 
     <div className='ALL'>
+
       <div className='BASKET-ALL'>
         <h2>BASKET</h2>
-        {money > 0 && <p>Money: {money}</p>}
+        {money > 0 && (
+          <p style={{ color: money < 3 ? 'orange' : 'black' }}>Money: {money}</p>
+        )}
         <Basket basket={basket} backProduct={backProduct} />
       </div>
+
       <div className='SHOP-ALL'>
         <h1>AVAILABLE PRODUCTS</h1>
         <div className='SHOP-CONTENT'>
           <Products product={products} buyProduct={buyProduct}/>
         </div>
       </div>
+      
     </div>
   );
 };

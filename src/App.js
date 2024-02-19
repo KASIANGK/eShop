@@ -8,21 +8,22 @@ function App() {
   const [money, setMoney] = useState(20)
   const [basket, setBasket] = useState([])
   const [products, setProducts] = useState([
-    {name: 'Product 1', price: 2, stock: 5, image: '' },
-    {name: 'Product 2', price: 8, stock: 3, image: '' },
-    {name: 'Product 3', price: 10, stock: 1, image: '' }
+    {name: 'Product 1', price: 2, stock: 5, image: '', quantity: '' },
+    {name: 'Product 2', price: 8, stock: 3, image: '', quantity: '' },
+    {name: 'Product 3', price: 10, stock: 1, image: '', quantity: '' }
   ]);
 
 
-  // BUY PRODUCTS 
+// BUY PRODUCTS 
 
   function buyProduct(product) {
+    
+    // MONEY
+
     if (money >= product.price && product.stock > 0) {
       setMoney(money - product.price)
 
-      setBasket([...basket, product])
-
-
+    // PRODUCTS, STOCK
       const updatedProducts = products.map((p) => {
         if (p.name === product.name) {
           return {...p, stock: p.stock - 1}
@@ -31,12 +32,43 @@ function App() {
       })
       setProducts(updatedProducts)
     }
+
+    quantityBasket(product)
+}
+
+
+
+// BASKET'S QUANTITY 
+function quantityBasket(product) {
+  
+  let basketIndex = null
+
+  for (let i = 0; i < basket.length; i++) {
+    if (basket[i].name === product.name) {
+      basketIndex = i
+      break;
+    }
   }
 
+  if (basketIndex !== null) {
+    const updatedBasket = [...basket]
+    updatedBasket[basketIndex].quantity += 1
+    setBasket(updatedBasket)
+  } else {
+    setBasket([...basket, { ...product, quantity: 1 }])
+  }
+}
 
-  // BACK PRODUCTS
+
+// BACK PRODUCTS
 
   function backProduct(product) {
+
+    // MONEY
+
+    setMoney(money + product.price)
+  
+    // PRODUCTS, STOCK
     const updatedProducts = products.map((p) => {
       if (p.name === product.name) {
         return { ...p, stock: p.stock + 1 }
@@ -45,25 +77,21 @@ function App() {
     });
     setProducts(updatedProducts)
 
-
-    
+    //PANIER
     let productIndex = null
-
     for (let i = 0; i < basket.length; i++) {
       if (basket[i].name === product.name) {
       productIndex = i
       break;
+      }
+    }
+  
+    if (productIndex !== null) {
+      const updatedBasket = [...basket]
+      updatedBasket.splice(productIndex, 1)
+      setBasket(updatedBasket)
     }
   }
-  
-  if (productIndex !== null) {
-    const updatedBasket = [...basket]
-    updatedBasket.splice(productIndex, 1)
-    setBasket(updatedBasket)
-  }
-    setMoney(money + product.price)
-  }
-  
 
 
   return (
@@ -84,7 +112,7 @@ function App() {
           <Products product={products} buyProduct={buyProduct}/>
         </div>
       </div>
-      
+
     </div>
   );
 };

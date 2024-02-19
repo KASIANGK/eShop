@@ -1,0 +1,11 @@
+.CARD {
+    background-color: rgb(44, 188, 34);
+}
+
+.OUT-OF-STOCK {
+    background-color: rgb(126, 29, 29);
+}
+
+.LOW-STOCK {
+    background-color: orange;
+}

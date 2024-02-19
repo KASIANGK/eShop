@@ -1,11 +1,11 @@
-import '../Basket/Basket.css'
+import React from 'react';
 
-function Basket() {
-    return (
-        <div>
-            <h1>Basket</h1>
-        </div>
-    )
-}
+function Basket ({basket, backProduct}) {
+  return (
+    <div>
+      
+    </div>
+  );
+};
 
-export default Basket
+// export default Basket;

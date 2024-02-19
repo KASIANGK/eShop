@@ -1,6 +1,6 @@
 import './App.css';
 import { useState } from 'react';
-// import Basket from './Components/Basket/Basket.js'
+import Basket from './Components/Basket/Basket.js'
 import Products from './Components/Products/Products.js'
 
 function App() {
@@ -20,6 +20,9 @@ function App() {
     if (money >= product.price && product.stock > 0) {
       setMoney(money - product.price)
 
+      setBasket([...basket, product])
+
+
       const updatedProducts = products.map((p) => {
         if (p.name === product.name) {
           return {...p, stock: p.stock - 1}
@@ -29,19 +32,54 @@ function App() {
       setProducts(updatedProducts)
     }
   }
+
+
+  // BACK PRODUCTS
+
+  function backProduct(product) {
+    const updatedProducts = products.map((p) => {
+      if (p.name === product.name) {
+        return { ...p, stock: p.stock + 1 }
+      }
+      return p
+    });
+    setProducts(updatedProducts)
+
+
+    
+    let productIndex = null
+
+    for (let i = 0; i < basket.length; i++) {
+      if (basket[i].name === product.name) {
+      productIndex = i
+      break;
+    }
+  }
+  
+  if (productIndex !== null) {
+    const updatedBasket = [...basket]
+    updatedBasket.splice(productIndex, 1)
+    setBasket(updatedBasket)
+  }
+
+    setMoney(money + product.price)
+    
+
+  }
   
 
 
   return (
 
     <div className='ALL'>
-      <div className='BASKET'>
+      <div className='BASKET-ALL'>
         <h2>BASKET</h2>
         {money > 0 && <p>Money: {money}</p>}
+        <Basket basket={basket} backProduct={backProduct} />
       </div>
-      <div className='SHOP'>
+      <div className='SHOP-ALL'>
         <h1>AVAILABLE PRODUCTS</h1>
-        <div className='AVAILABLE-PRODUCTS'>
+        <div className='SHOP-CONTENT'>
           <Products product={products} buyProduct={buyProduct}/>
         </div>
       </div>

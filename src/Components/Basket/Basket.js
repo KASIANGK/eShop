@@ -1,11 +1,19 @@
-import React from 'react';
+import './Basket.css'
 
-function Basket ({basket, backProduct}) {
+function Basket({basket, backProduct}) {
+    console.log(basket);
   return (
-    <div>
-      
+    <div className="BASKET">
+      {basket.map((product, index) => (
+        <div key={index} className="BASKET-CONTENT">
+          <img src={product.image} />
+          <p>Name: {product.name}</p>
+          <p>Price: {product.price}</p>
+          <button onClick={() => backProduct(product)}>BACK</button>
+        </div>
+      ))}
     </div>
   );
-};
+}
 
-// export default Basket;
+export default Basket;

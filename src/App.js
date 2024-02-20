@@ -62,38 +62,86 @@ function quantityBasket(product) {
 
 // BACK PRODUCTS
 
-  function backProduct(product) {
+//   function backProduct(product) {
+
+//     // MONEY
+
+//     setMoney(money + product.price)
+  
+//     // PRODUCTS, STOCK
+//     const updatedProducts = products.map((p) => {
+//       if (p.name === product.name) {
+//         return { ...p, stock: p.stock + 1 }
+//       }
+//       return p
+//     });
+//     setProducts(updatedProducts)
+
+//     //PANIER
+//     let productIndex = null
+//     for (let i = 0; i < basket.length; i++) {
+//       if (basket[i].name === product.name) {
+//       productIndex = i
+//       break;
+//       }
+//     }
+
+
+
+//   if (productIndex !== null) {
+//     const updatedBasket = [...basket]
+//     updatedBasket[productIndex].quantity -= 1
+//     setBasket(updatedBasket)
+//   } else {
+//     setBasket([...basket, { ...product, quantity: 1 }])
+//   }
+// }
+
+
+// BACK PRODUCT
+
+function backProduct(product) {
 
     // MONEY
-
-    setMoney(money + product.price)
-  
-    // PRODUCTS, STOCK
-    const updatedProducts = products.map((p) => {
-      if (p.name === product.name) {
-        return { ...p, stock: p.stock + 1 }
-      }
-      return p
-    });
-    setProducts(updatedProducts)
-
-    //PANIER
-    let productIndex = null
-    for (let i = 0; i < basket.length; i++) {
-      if (basket[i].name === product.name) {
-      productIndex = i
-      break;
-      }
+    const updatedMoney = money + product.price;
+    if (updatedMoney <= 20) {
+        setMoney(updatedMoney)
+    } else {
+        console.log("max money");
+        return;
     }
 
 
-  if (productIndex !== null) {
-    const updatedBasket = [...basket]
-    updatedBasket[productIndex].quantity -= 1
-    setBasket(updatedBasket)
-  } else {
-    setBasket([...basket, { ...product, quantity: 1 }])
-  }
+    // PRODUCTS AND STOCK
+    const updatedProducts = products.map((p) => {
+        if (p.name === product.name) {
+            return { ...p, stock: p.stock + 1 }
+        }
+        return p
+    })
+    setProducts(updatedProducts)
+
+    // BASKET
+    let productIndex = null;
+    for (let i = 0; i < basket.length; i++) {
+        if (basket[i].name === product.name) {
+            productIndex = i
+            break
+        }
+    }
+
+    if (productIndex !== null) {
+        const updatedBasket = [...basket];
+
+        if (updatedBasket[productIndex].quantity > 0) {
+            updatedBasket[productIndex].quantity -= 1
+            setBasket(updatedBasket)
+        } else {
+            console.log("quantity 0");
+        }
+    } else {
+        console.log("any products");
+    }
 }
 
   

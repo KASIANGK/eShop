@@ -16,7 +16,7 @@ function Products({product, buyProduct, money}) {
           <p>Stock: {product.stock}</p>
           {product.stock > 0 ? 
             <button onClick={() => buyProduct(product)}>BUY</button>
-            : "" 
+            : (<p className='PRODUCT-OUT'>OUT OF STOCK</p>)
           }
           
         </div>

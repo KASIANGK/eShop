@@ -9,3 +9,10 @@
 .LOW-STOCK {
     background-color: orange;
 }
+.HIGH-MONEY {
+    background-color: green;
+}
+.LOW-MONEY {
+    border: navy;
+    background-color: red;
+}

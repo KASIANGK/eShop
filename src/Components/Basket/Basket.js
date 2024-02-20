@@ -12,6 +12,7 @@ function Basket({basket, backProduct}) {
           <p>Price: {product.price}</p>
           <p>Quantity: {product.quantity}</p>
           <button onClick={() => backProduct(product)}>BACK</button>
+          
         </div>
       ))}
     </div>

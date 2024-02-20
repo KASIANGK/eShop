@@ -85,14 +85,18 @@ function quantityBasket(product) {
       break;
       }
     }
-  
-    if (productIndex !== null) {
-      const updatedBasket = [...basket]
-      updatedBasket.splice(productIndex, 1)
-      setBasket(updatedBasket)
-    }
-  }
 
+
+  if (productIndex !== null) {
+    const updatedBasket = [...basket]
+    updatedBasket[productIndex].quantity -= 1
+    setBasket(updatedBasket)
+  } else {
+    setBasket([...basket, { ...product, quantity: 1 }])
+  }
+}
+
+  
 
   return (
 
@@ -118,3 +122,4 @@ function quantityBasket(product) {
 };
 
 export default App;
+

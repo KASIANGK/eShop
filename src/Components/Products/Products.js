@@ -1,6 +1,6 @@
 import './Products.css'
 
-function Products({product, buyProduct}) {
+function Products({product, buyProduct, money}) {
   return (
     <div className='CARD-OG'>
       {product.map((product) => (
@@ -16,8 +16,9 @@ function Products({product, buyProduct}) {
           <p>Stock: {product.stock}</p>
           {product.stock > 0 ? 
             <button onClick={() => buyProduct(product)}>BUY</button>
-            : ""
+            : "" 
           }
+          
         </div>
       ))}
     </div>

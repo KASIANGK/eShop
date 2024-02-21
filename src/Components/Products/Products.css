@@ -1,28 +1,28 @@
 .OUT-OF-STOCK {
-    background-color: rgb(126, 29, 29, 0.245);
+    background-color: rgba(214, 28, 28, 0.245);
     color: white;
-    width: 350px;
+    width: 280px;
     justify-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 500px;
+    height: 530px;
 }
 
 .LOW-STOCK {
     background-color: rgba(213, 106, 24, 0.245);
     color: white;
-    width: 350px;
+    width: 280px;
     justify-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 500px;
+    height: 530px;
 }
 .HIGH-MONEY {
     background-color: rgba(0, 128, 0, 0.245);
     color: white;
-    width: 400px;
+    width: 280px;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -41,7 +41,7 @@
 }
 
 .CARD {
-    width: 350px;
+    width: 280px;
     justify-content: center;
     align-items: center;
     display: flex;

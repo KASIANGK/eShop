@@ -8,5 +8,10 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0%;
+    padding-bottom: 20%;
+}
+
+#root {
+    width: 100%;
 }
 

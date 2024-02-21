@@ -3,6 +3,10 @@
     width: 100vw;
     flex-wrap: wrap;
     background-color: transparent;
+    background: none;
+    margin-left: 3%;
+    margin-top: 3%;
+    /* padding: 25px; */
 }
 
 .NAVBAR-LINKS {

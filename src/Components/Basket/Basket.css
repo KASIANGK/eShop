@@ -5,11 +5,18 @@
     justify-content: start;
     align-items: end;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
+    /* padding-right : 20px */
+    margin-left: -5%;
 }
 
 .BASKET-ALL p {
     color: white;
+}
+.BASKET-CONTENT {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
 }
 
 .BASKET-CONTENT img {

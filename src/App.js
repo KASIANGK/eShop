@@ -8,6 +8,13 @@ import Navbar from './Components/Navbar/Navbar'
 import gameOG from '../src/assets/gameOG.png'
 import gameP from '../src/assets/gameP.png'
 import Modal from 'react-modal';
+import BtnCircle from '../src/assets/circle.PNG'
+import BtnCircle2 from '../src/assets/BtnCircle2.png'
+import RedGame from '../src/assets/redG.png'
+import GreyGame from '../src/assets/GameGrey.png'
+import Advance from '../src/assets/Advance.png'
+import GameBleu from '../src/assets/GameBleu.png'
+import RG from '../src/assets/RG.png'
 
 function App() {
  
@@ -15,16 +22,16 @@ function App() {
   const [basket, setBasket] = useState([])
   const [products, setProducts] = useState([
     {id: 1, name: 'Product 1', price: 2, stock: 5, image: gameOG, quantity: '' },
-    {id: 2, name: 'Product 2', price: 8, stock: 3, image: gamePurple, quantity: '' },
+    {id: 2, name: 'Product 2', price: 8, stock: 0, image: Advance, quantity: '' },
     {id: 3, name: 'Product 3', price: 10, stock: 1, image: gameP, quantity: '' },
-    {id: 4, name: 'Product 4', price: 2, stock: 5, image: gameOG, quantity: '' },
-    {id: 5, name: 'Product 5', price: 8, stock: 3, image: gamePurple, quantity: '' },
-    {id: 6, name: 'Product 6', price: 10, stock: 1, image: gameP, quantity: '' }
+    {id: 4, name: 'Product 4', price: 2, stock: 5, image: RG, quantity: '' },
+    {id: 5, name: 'Product 5', price: 8, stock: 3, image: GreyGame, quantity: '' },
+    {id: 6, name: 'Product 6', price: 10, stock: 1, image: GameBleu, quantity: '' }
   ]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
+  
 
   //MODAL
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const openModal = () => {
         setIsModalOpen(true);
     };
@@ -124,7 +131,8 @@ function backProduct(product) {
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                zIndex: -1
+                zIndex: -1,
+                top: 0
             }}>
                 <source src={videoGameboy} type="video/mp4" />
             </video>
@@ -136,7 +144,7 @@ function backProduct(product) {
                         <p style={{ color: money < 3 ? 'orange' : 'white' }}>Money: {money}</p>
                     )}
                 </div>
-                <button className='BTN-OPEN' onClick={openModal}>Open Basket Modal</button>
+                <img src={BtnCircle} className='BTN-OPEN' onClick={openModal}/>
             </div>
 
             <div className='SHOP-ALL'>
@@ -150,7 +158,7 @@ function backProduct(product) {
                 <div className='MODAL'>
                     <Basket basket={basket} backProduct={backProduct} />
                 </div>
-                <button className='BTN-CLOSE' onClick={closeModal}>Close Basket Modal</button>
+                <img src={BtnCircle2} className='BTN-CLOSE' onClick={closeModal}></img>
             </Modal>
         </div>
     );

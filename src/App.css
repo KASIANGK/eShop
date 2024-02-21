@@ -1,0 +1,38 @@
+.App {
+  width: 100vw;
+  background-color: rgb(0, 0, 0);
+  overflow-x: hidden;
+}
+
+.SHOP-ALL {
+  color: darkgrey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.TITLE {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;  
+}
+
+.BTN-OPEN {
+  /* border-radius: 15px;
+  background-color: rgb(25, 29, 25);
+  color: white;
+  padding: 15px; */
+  width: 70px;
+}
+.BTN-CLOSE {
+  /* border-radius: 15px;
+  background-color: rgb(25, 29, 25);
+  color: white;
+  padding: 15px; */
+  width: 70px;
+  margin-bottom: 5%;
+  
+}

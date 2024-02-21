@@ -1,0 +1,39 @@
+.NAVBAR {
+    display: flex;
+    width: 100vw;
+    flex-wrap: wrap;
+    background-color: transparent;
+    background: none;
+    margin-left: 3%;
+    margin-top: 3%;
+    /* padding: 25px; */
+}
+
+.NAVBAR-LINKS {
+    display: flex;
+    gap: 45px;
+    list-style: none;
+    font-size: 0.9em;
+    padding-top: 10px;
+}
+
+.NAVBAR-LINKS a {
+    text-decoration: none;
+    color: white;
+}
+
+.NAVBAR-LOGO img {
+    width: 200px;
+}
+
+
+@media only screen and (max-width: 425px) {
+    .NAVBAR-LINKS {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+        font-size: 0.9em;
+        margin-left: -4%;
+        padding-top: 5px;
+    }
+  }

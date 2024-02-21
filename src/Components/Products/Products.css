@@ -1,0 +1,66 @@
+.OUT-OF-STOCK {
+    background-color: rgba(214, 28, 28, 0.245);
+    color: white;
+    width: 280px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 530px;
+}
+
+.LOW-STOCK {
+    background-color: rgba(213, 106, 24, 0.245);
+    color: white;
+    width: 280px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 530px;
+}
+.HIGH-MONEY {
+    background-color: rgba(0, 128, 0, 0.245);
+    color: white;
+    width: 280px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+}
+
+
+.CARD-OG {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.CARD {
+    width: 280px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: rgba(119, 34, 188, 0.312);
+    color: white;
+    flex-direction: column;
+    padding-bottom: 15px;
+    height: 500px;
+    padding-top: 15px;
+}
+.CARD-OG h3 {
+    margin-top: 10%;
+}
+
+.BTN-PIXEL {
+    width: 120px;
+  }
+  
+.IMAGES-PRODUCTS {
+    width: 200px;
+    height: 170px;
+}

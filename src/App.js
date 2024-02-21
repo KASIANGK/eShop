@@ -2,10 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import Basket from './Components/Basket/Basket.js'
 import Products from './Components/Products/Products.js'
-import videoCoin from '../src/assets/coin.MP4'
 import videoGameboy from '../src/assets/OKOK.mp4'
-import gameBlue from './assets/gameB.png'
-import gameWhite from './assets/gameW.png'
 import gamePurple from './assets/gamePrurple.png'
 import Navbar from './Components/Navbar/Navbar'
 import gameOG from '../src/assets/gameOG.png'
@@ -27,7 +24,7 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
 
-
+  //MODAL
   const openModal = () => {
         setIsModalOpen(true);
     };
@@ -139,7 +136,7 @@ function backProduct(product) {
                         <p style={{ color: money < 3 ? 'orange' : 'white' }}>Money: {money}</p>
                     )}
                 </div>
-                <button onClick={openModal}>Open Basket Modal</button>
+                <button className='BTN-OPEN' onClick={openModal}>Open Basket Modal</button>
             </div>
 
             <div className='SHOP-ALL'>
@@ -153,7 +150,7 @@ function backProduct(product) {
                 <div className='MODAL'>
                     <Basket basket={basket} backProduct={backProduct} />
                 </div>
-                <button onClick={closeModal}>Close Basket Modal</button>
+                <button className='BTN-CLOSE' onClick={closeModal}>Close Basket Modal</button>
             </Modal>
         </div>
     );

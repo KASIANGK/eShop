@@ -2,39 +2,61 @@ import './App.css';
 import { useState } from 'react';
 import Basket from './Components/Basket/Basket.js'
 import Products from './Components/Products/Products.js'
+import videoCoin from '../src/assets/coin.MP4'
+import videoGameboy from '../src/assets/OKOK.mp4'
+import gameBlue from './assets/gameB.png'
+import gameWhite from './assets/gameW.png'
+import gamePurple from './assets/gamePrurple.png'
+import Navbar from './Components/Navbar/Navbar'
+import gameOG from '../src/assets/gameOG.png'
+import gameP from '../src/assets/gameP.png'
+import Modal from 'react-modal';
 
 function App() {
  
   const [money, setMoney] = useState(20)
   const [basket, setBasket] = useState([])
   const [products, setProducts] = useState([
-    {name: 'Product 1', price: 2, stock: 5, image: '', quantity: '' },
-    {name: 'Product 2', price: 8, stock: 3, image: '', quantity: '' },
-    {name: 'Product 3', price: 10, stock: 1, image: '', quantity: '' }
+    {id: 1, name: 'Product 1', price: 2, stock: 5, image: gameOG, quantity: '' },
+    {id: 2, name: 'Product 2', price: 8, stock: 3, image: gamePurple, quantity: '' },
+    {id: 3, name: 'Product 3', price: 10, stock: 1, image: gameP, quantity: '' },
+    {id: 4, name: 'Product 4', price: 2, stock: 5, image: gameOG, quantity: '' },
+    {id: 5, name: 'Product 5', price: 8, stock: 3, image: gamePurple, quantity: '' },
+    {id: 6, name: 'Product 6', price: 10, stock: 1, image: gameP, quantity: '' }
   ]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+
+
+  const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
 
 
 // BUY PRODUCTS 
 
-  function buyProduct(product) {
-    
-    // MONEY
-
+function buyProduct(product) {
     if (money >= product.price && product.stock > 0) {
-      setMoney(money - product.price)
+        setMoney(money - product.price);
 
-    // PRODUCTS, STOCK
-      const updatedProducts = products.map((p) => {
-        if (p.name === product.name) {
-          return {...p, stock: p.stock - 1}
-        }
-        return p
-      })
-      setProducts(updatedProducts)
+        const updatedProducts = products.map((p) => {
+            if (p.id === product.id) {
+                return { ...p, stock: p.stock - 1 };
+            }
+            return p;
+        });
+        setProducts(updatedProducts);
+        quantityBasket(product);
+    } else {
+        console.log("not enough money");
     }
-
-    quantityBasket(product)
 }
+
 
 
 
@@ -60,43 +82,6 @@ function quantityBasket(product) {
 }
 
 
-// BACK PRODUCTS
-
-//   function backProduct(product) {
-
-//     // MONEY
-
-//     setMoney(money + product.price)
-  
-//     // PRODUCTS, STOCK
-//     const updatedProducts = products.map((p) => {
-//       if (p.name === product.name) {
-//         return { ...p, stock: p.stock + 1 }
-//       }
-//       return p
-//     });
-//     setProducts(updatedProducts)
-
-//     //PANIER
-//     let productIndex = null
-//     for (let i = 0; i < basket.length; i++) {
-//       if (basket[i].name === product.name) {
-//       productIndex = i
-//       break;
-//       }
-//     }
-
-
-
-//   if (productIndex !== null) {
-//     const updatedBasket = [...basket]
-//     updatedBasket[productIndex].quantity -= 1
-//     setBasket(updatedBasket)
-//   } else {
-//     setBasket([...basket, { ...product, quantity: 1 }])
-//   }
-// }
-
 
 // BACK PRODUCT
 
@@ -114,7 +99,7 @@ function backProduct(product) {
 
     // PRODUCTS AND STOCK
     const updatedProducts = products.map((p) => {
-        if (p.name === product.name) {
+        if (p.id === product.id) {
             return { ...p, stock: p.stock + 1 }
         }
         return p
@@ -122,52 +107,57 @@ function backProduct(product) {
     setProducts(updatedProducts)
 
     // BASKET
-    let productIndex = null;
-    for (let i = 0; i < basket.length; i++) {
-        if (basket[i].name === product.name) {
-            productIndex = i
-            break
+    const updatedBasket = basket.map((item) => {
+        if (item.id === product.id && item.quantity > 0) {
+            return { ...item, quantity: item.quantity - 1 };
         }
-    }
+        return item;
+    });
 
-    if (productIndex !== null) {
-        const updatedBasket = [...basket];
-
-        if (updatedBasket[productIndex].quantity > 0) {
-            updatedBasket[productIndex].quantity -= 1
-            setBasket(updatedBasket)
-        } else {
-            console.log("quantity 0");
-        }
-    } else {
-        console.log("any products");
-    }
+    setBasket(updatedBasket);
 }
 
   
 
   return (
+        <div className='ALL'>
+            <Navbar />
+            <video autoPlay muted loop id="GAEMBOY" style={{
+                position: 'fixed',
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                zIndex: -1
+            }}>
+                <source src={videoGameboy} type="video/mp4" />
+            </video>
 
-    <div className='ALL'>
+            <div className='BASKET-ALL'>
+                <div className='BASKET-TITLE'>
+                    <h2>BASKET</h2>
+                    {money > 0 && (
+                        <p style={{ color: money < 3 ? 'orange' : 'white' }}>Money: {money}</p>
+                    )}
+                </div>
+                <button onClick={openModal}>Open Basket Modal</button>
+            </div>
 
-      <div className='BASKET-ALL'>
-        <h2>BASKET</h2>
-        {money > 0 && (
-          <p style={{ color: money < 3 ? 'orange' : 'black' }}>Money: {money}</p>
-        )}
-        <Basket basket={basket} backProduct={backProduct} />
-      </div>
+            <div className='SHOP-ALL'>
+                <h1 className='TITLE'>AVAILABLE PRODUCTS</h1>
+                <div className='SHOP-CONTENT'>
+                    <Products product={products} buyProduct={buyProduct} />
+                </div>
+            </div>
 
-      <div className='SHOP-ALL'>
-        <h1>AVAILABLE PRODUCTS</h1>
-        <div className='SHOP-CONTENT'>
-          <Products product={products} buyProduct={buyProduct}/>
+            <Modal isOpen={isModalOpen} onRequestClose={closeModal}>
+                <div className='MODAL'>
+                    <Basket basket={basket} backProduct={backProduct} />
+                </div>
+                <button onClick={closeModal}>Close Basket Modal</button>
+            </Modal>
         </div>
-      </div>
-
-    </div>
-  );
-};
+    );
+}
 
 export default App;
 

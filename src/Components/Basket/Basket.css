@@ -1,7 +1,31 @@
-h1 {
-    color: blue;
+.BASKET-ALL {
+    color: white;
+    height: 300px;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    flex-direction: column;
+    width: 100%;
 }
 
-.LOW-MONEY {
-    
+.BASKET-ALL p {
+    color: white;
+}
+
+.BASKET-CONTENT img {
+    width: 200px;
+}
+.BASKET {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 45px;
+}
+
+.BASKET div {
+    width: 100px;
+}
+.BASKET img {
+    width: 50px;
 }

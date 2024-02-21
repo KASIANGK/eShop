@@ -1,0 +1,21 @@
+.NAVBAR {
+    display: flex;
+    width: 100vw;
+    flex-wrap: wrap;
+    background-color: transparent;
+}
+
+.NAVBAR-LINKS {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+}
+
+.NAVBAR-LINKS a {
+    text-decoration: none;
+    color: white;
+}
+
+.NAVBAR-LOGO img {
+    width: 200px;
+}

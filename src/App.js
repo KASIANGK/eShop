@@ -15,6 +15,7 @@ import GreyGame from '../src/assets/GameGrey.png'
 import Advance from '../src/assets/Advance.png'
 import GameBleu from '../src/assets/GameBleu.png'
 import RG from '../src/assets/RG.png'
+import BTNBASKET from '../src/assets/BTNBASKET.png'
 
 function App() {
  
@@ -144,7 +145,7 @@ function backProduct(product) {
                         <p style={{ color: money < 3 ? 'orange' : 'white' }}>Money: {money}</p>
                     )}
                 </div>
-                <img src={BtnCircle} className='BTN-OPEN' onClick={openModal}/>
+                <img src={BTNBASKET} className='BTN-OPEN' onClick={openModal}/>
             </div>
 
             <div className='SHOP-ALL'>

@@ -8,10 +8,17 @@
     width: 100vw;
     /* padding-right : 20px */
     margin-left: -5%;
+    margin-top: -70px;
 }
-
+.BASKET-TITLE {
+    text-align: right;
+}
+.BASKET-ALL h2 {
+    font-size: 0.9em;
+}
 .BASKET-ALL p {
     color: white;
+    font-size: 0.9em;
 }
 .BASKET-CONTENT {
     display: flex;
@@ -36,3 +43,20 @@
 .BASKET img {
     width: 50px;
 }
+
+
+@media only screen and (max-width: 425px) {
+    .BASKET-ALL {
+        color: white;
+        height: 300px;
+        display: flex;
+        justify-content: start;
+        align-items: end;
+        flex-direction: column;
+        width: 100vw;
+        /* padding-right : 20px */
+        margin-left: -5%;
+        margin-top: -48px;
+    }
+  }
+  

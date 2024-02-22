@@ -21,18 +21,28 @@
 }
 
 .BTN-OPEN {
-  /* border-radius: 15px;
-  background-color: rgb(25, 29, 25);
-  color: white;
-  padding: 15px; */
   width: 70px;
 }
 .BTN-CLOSE {
-  /* border-radius: 15px;
-  background-color: rgb(25, 29, 25);
-  color: white;
-  padding: 15px; */
   width: 70px;
   margin-bottom: 5%;
-  
+}
+
+.MODAL-BG {
+  /* background-image: url(./assets/BG.JPG); */
+  width: 60%;
+  height: fit-content;
+  color: white;
+  padding: 25px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.MODAL-CONTENT {
+  max-height: 80vh; 
+  overflow-y: auto; 
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }

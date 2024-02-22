@@ -2,13 +2,12 @@
     color: white;
     height: 300px;
     display: flex;
-    justify-content: start;
+    justify-content: end;
     align-items: end;
     flex-direction: column;
-    width: 100vw;
-    /* padding-right : 20px */
+    width: 100%;
     margin-left: -5%;
-    margin-top: -70px;
+    margin-top: -15%;
     position: fixed;
 }
 .BASKET-TITLE {
@@ -28,7 +27,7 @@
 }
 
 .BASKET-CONTENT img {
-    width: 200px;
+    width: 300px;
 }
 .BASKET {
     width: 100%;
@@ -42,7 +41,7 @@
     width: 100px;
 }
 .BASKET img {
-    width: 50px;
+    width: 150px;
 }
 
 

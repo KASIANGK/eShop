@@ -120,12 +120,11 @@ function backProduct(product) {
 
     setBasket(updatedBasket);
 }
-
   
 
   return (
         <div className='ALL'>
-            <Navbar />
+            <Navbar/>
             <video autoPlay muted loop id="GAEMBOY" style={{
                 position: 'fixed',
                 width: '100%',
@@ -133,7 +132,8 @@ function backProduct(product) {
                 objectFit: 'cover',
                 zIndex: -1,
                 top: 0
-            }}>
+            }}
+        >
                 <source src={videoGameboy} type="video/mp4" />
             </video>
 
@@ -154,12 +154,13 @@ function backProduct(product) {
                 </div>
             </div>
 
-            <Modal isOpen={isModalOpen} onRequestClose={closeModal}>
-                <img src={BtnCircle2} className='BTN-CLOSE' onClick={closeModal}></img>
-                <div className='MODAL'>
+            <Modal className='MODAL-BG' isOpen={isModalOpen} onRequestClose={closeModal}>
+                <img src={BtnCircle2} className='BTN-CLOSE' onClick={closeModal} />
+                <div className='MODAL-CONTENT'>
                     <Basket basket={basket} backProduct={backProduct} />
                 </div>
             </Modal>
+
         </div>
     );
 }

@@ -58,6 +58,25 @@
 
 .BTN-PIXEL {
     width: 120px;
+    position: relative; 
+}
+
+.BTN-PIXEL2 {
+    width: 120px;
+    position: absolute; 
+    top: 0; 
+    left: 0;
+}
+
+.CONTAINER-IMG {
+    position: relative; 
+    width: 120px; 
+    height: 170px;
+}
+
+
+.HIDDEN {
+    opacity: 0;
   }
   
 .IMAGES-PRODUCTS {

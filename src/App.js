@@ -64,7 +64,6 @@ function buyProduct(product) {
 
 
 
-
 // BASKET'S QUANTITY 
 function quantityBasket(product) {
   

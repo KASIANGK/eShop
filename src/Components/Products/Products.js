@@ -1,104 +1,63 @@
-// import React, { useState } from 'react';
-// import './Products.css'
-// import bouton from '../../assets/boutonOGG.png'
-// import boutonEnter from '../../assets/boutonBiss.png'
-
-// function Products({ product, buyProduct, money}) {
-//   const [clickedProduct, setClickedProduct] = useState(null);
-
-//   const handleButtonClick = (product) => {
-//     setClickedProduct(product)
-//     buyProduct(product); 
-
-//     setTimeout(() => {
-//       setClickedProduct(null);
-//     }, 300);
-//   };
-
-//   return (
-//     <div className='CARD-OG'>
-//       {product.map((product) => (
-//         <div 
-//           key={product.name} 
-//           className={product.stock === 0 ? 'OUT-OF-STOCK' : (product.stock === 1 ? 'LOW-STOCK' : 'CARD')}
-//         >
-//           <img 
-//             src={product.image} 
-//             className="IMAGES-PRODUCTS" 
-//           />
-//           <h3>{product.name}</h3>
-//           <p>Price: {product.price}</p>
-//           <p>Stock: {product.stock}</p>
-//           {product.stock > 0 && money >= product.price ? 
-//             <img 
-//               src={clickedProduct === product ? boutonEnter : bouton} 
-//               className='BTN-PIXEL' 
-//               onClick={() => handleButtonClick(product)}
-//             /> :
-//             <p className='PRODUCT-OUT'>CAN'T BUY</p>
-//           }
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default Products;
-
-
 import React, { useState } from 'react';
 import './Products.css';
 import bouton from '../../assets/boutonOGG.png';
 import boutonEnter from '../../assets/boutonBiss.png';
 
-
 function Products({ product, buyProduct, money }) {
-  const [clickedProduct, setClickedProduct] = useState(null);
+  const [hoveredProduct, setHoveredProduct] = useState(null);
 
-
-  const handleButtonClickAndBuy = (product) => {
-    setClickedProduct(product);
-    buyProduct(product)
-    setTimeout(() => {
-      setClickedProduct(null);
-    }, 300);
+  const handleMouseEnter = (product) => {
+    setHoveredProduct(product);
   };
+
+  const handleMouseLeave = () => {
+    setHoveredProduct(null);
+  };
+
+  function imgBuy(product) {
+    buyProduct(product);
+  }
 
   return (
     <div className='CARD-OG'>
-      {product.map((product) => (
+      {product.map((productItem) => (
         <div 
-          key={product.name} 
-          className={product.stock === 0 ? 'OUT-OF-STOCK' : (product.stock === 1 ? 'LOW-STOCK' : 'CARD')}
+          key={productItem.name} 
+          className={productItem.stock === 0 ? 'OUT-OF-STOCK' : (productItem.stock === 1 ? 'LOW-STOCK' : 'CARD')}
         >
           <img 
-            src={product.image} 
+            src={productItem.image} 
             className="IMAGES-PRODUCTS" 
           />
-          <h3>{product.name}</h3>
-          <p>Price: {product.price}</p>
-          <p>Stock: {product.stock}</p>
+          <h3>{productItem.name}</h3>
+          <p>Price: {productItem.price}</p>
+          <p>Stock: {productItem.stock}</p>
           <div className="CONTAINER-IMG">
-            {product.stock > 0 && money >= product.price ? 
-              <img 
-                src={bouton} 
-                className={`BTN-PIXEL ${clickedProduct === product ? 'HIDDEN' : ''}`} 
-                onClick={() => handleButtonClickAndBuy(product)}
-              /> :
+            {productItem.stock > 0 && money >= productItem.price ? 
+              <div 
+                className="BTN-PIXEL-CONTAINER"
+                onMouseEnter={() => handleMouseEnter(productItem)}
+                onMouseLeave={handleMouseLeave}
+              >
+                <img 
+                  src={bouton} 
+                  className={`BTN-PIXEL ${hoveredProduct === productItem ? 'HIDDEN' : ''}`} 
+                  onClick={() => imgBuy(productItem)}
+                />
+                <img 
+                  src={boutonEnter} 
+                  className={`BTN-PIXEL2 ${hoveredProduct !== productItem ? 'HIDDEN' : ''}`} 
+                  onClick={() => imgBuy(productItem)}
+                />
+              </div>
+              :
               <p className='PRODUCT-OUT'>CAN'T BUY</p>
-            }
-            {clickedProduct === product && (
-              <img
-                src={boutonEnter}
-                className="BTN-PIXEL2"
-              />)
             }
           </div>
         </div>
       ))}
     </div>
   );
-};
+}
 
 export default Products;
-

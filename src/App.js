@@ -31,6 +31,8 @@ function App() {
   ]);
   
 
+  
+
   //MODAL
   const [isModalOpen, setIsModalOpen] = useState(false)
   const openModal = () => {

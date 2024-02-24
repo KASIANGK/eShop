@@ -16,6 +16,9 @@ import Advance from '../src/assets/Advance.png'
 import GameBleu from '../src/assets/GameBleu.png'
 import RG from '../src/assets/RG.png'
 import BTNBASKET from '../src/assets/BTNBASKET.png'
+import Footer from './Components/Footer/Footer'
+
+
 
 function App() {
  
@@ -156,12 +159,19 @@ function backProduct(product) {
                 </div>
             </div>
 
+            <div className='FOOTER-ALL'>
+                <Footer></Footer>
+            </div>
+
             <Modal className='MODAL-BG' isOpen={isModalOpen} onRequestClose={closeModal}>
                 <img src={BtnCircle2} className='BTN-CLOSE' onClick={closeModal} />
                 <div className='MODAL-CONTENT'>
                     <Basket basket={basket} backProduct={backProduct} />
                 </div>
             </Modal>
+
+
+            
 
         </div>
     );

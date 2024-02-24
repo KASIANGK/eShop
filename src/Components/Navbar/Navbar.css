@@ -6,7 +6,6 @@
     background: none;
     margin-left: 3%;
     margin-top: 3%;
-    /* padding: 25px; */
 }
 
 .NAVBAR-LINKS {
@@ -15,6 +14,10 @@
     list-style: none;
     font-size: 0.9em;
     padding-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -8%;
+    margin-left: -8%;
 }
 
 .NAVBAR-LINKS a {
@@ -27,14 +30,71 @@
 }
   
 
+.NAVBAR-LINKS ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    display: flex;
+    gap: 30px;
+    justify-content: end;
+}
 
-@media only screen and (max-width: 425px) {
-    .NAVBAR-LINKS {
+
+
+.BURGER {
+    display: none; 
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-4px, 4px);
+    transform: rotate(-45deg) translate(-4px, 4px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-5px, -5px);
+    transform: rotate(45deg) translate(-5px, -5px);
+}
+
+
+.active {
+    display: flex;
+    width: 300px;
+}
+
+@media (max-width: 425px) {
+    .BURGER {
         display: flex;
-        gap: 30px;
-        list-style: none;
-        font-size: 0.9em;
-        margin-left: -4%;
-        padding-top: 5px;
     }
-  }
+
+    .NAVBAR-LINKS {
+        display: none;
+        width: 100%;
+    }
+
+    .NAVBAR-LINKS ul {
+        text-align: center;
+    }
+
+    .NAVBAR-LINKS li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+

@@ -1,28 +1,29 @@
 {
   "files": {
-    "main.css": "/eShop/static/css/main.936ad9bd.css",
-    "main.js": "/eShop/static/js/main.b69bbf31.js",
-    "static/media/gamePrurple.png": "/eShop/static/media/gamePrurple.b991f57fe7da0e21a3f5.png",
-    "static/media/OKOK.mp4": "/eShop/static/media/OKOK.46fedbb0920ac12a1a6f.mp4",
-    "static/media/BTNBASKET.png": "/eShop/static/media/BTNBASKET.e0ff965c62a60547c6a4.png",
-    "static/media/BtnCircle2.png": "/eShop/static/media/BtnCircle2.5e115b4869328112332f.png",
-    "static/media/circle.PNG": "/eShop/static/media/circle.9624f972366169781c3b.PNG",
-    "static/media/GameGrey.png": "/eShop/static/media/GameGrey.f0266846cddc0c4f7c97.png",
-    "static/media/boutonOGG.png": "/eShop/static/media/boutonOGG.8d66066bfa2cb120dd69.png",
-    "static/media/boutonBiss.png": "/eShop/static/media/boutonBiss.3cdd52bf4c51985c9f0b.png",
-    "static/media/redG.png": "/eShop/static/media/redG.c186828b024e84fd9f46.png",
-    "static/media/gameOG.png": "/eShop/static/media/gameOG.71ebd3bc52b419425dcc.png",
-    "static/media/Advance.png": "/eShop/static/media/Advance.beea9973b7ba7fa3a1f0.png",
-    "static/media/RG.png": "/eShop/static/media/RG.3f46f96478a194c4e09d.png",
-    "static/media/GameBleu.png": "/eShop/static/media/GameBleu.cd80f0314f9b78fdaa20.png",
-    "static/media/gameP.png": "/eShop/static/media/gameP.12c6f1d208692260fc4d.png",
-    "static/media/MolemGame.png": "/eShop/static/media/MolemGame.4d0918c73fe6ba7c0a3d.png",
-    "index.html": "/eShop/index.html",
-    "main.936ad9bd.css.map": "/eShop/static/css/main.936ad9bd.css.map",
-    "main.b69bbf31.js.map": "/eShop/static/js/main.b69bbf31.js.map"
+    "main.css": "/eShop_GAMEBOY/static/css/main.35c36ae3.css",
+    "main.js": "/eShop_GAMEBOY/static/js/main.894a1f93.js",
+    "static/media/gamePrurple.png": "/eShop_GAMEBOY/static/media/gamePrurple.b991f57fe7da0e21a3f5.png",
+    "static/media/OKOK.mp4": "/eShop_GAMEBOY/static/media/OKOK.46fedbb0920ac12a1a6f.mp4",
+    "static/media/BTNBASKET.png": "/eShop_GAMEBOY/static/media/BTNBASKET.e0ff965c62a60547c6a4.png",
+    "static/media/BtnCircle2.png": "/eShop_GAMEBOY/static/media/BtnCircle2.5e115b4869328112332f.png",
+    "static/media/circle.PNG": "/eShop_GAMEBOY/static/media/circle.9624f972366169781c3b.PNG",
+    "static/media/GameGrey.png": "/eShop_GAMEBOY/static/media/GameGrey.f0266846cddc0c4f7c97.png",
+    "static/media/boutonOGG.png": "/eShop_GAMEBOY/static/media/boutonOGG.8d66066bfa2cb120dd69.png",
+    "static/media/boutonBiss.png": "/eShop_GAMEBOY/static/media/boutonBiss.3cdd52bf4c51985c9f0b.png",
+    "static/media/redG.png": "/eShop_GAMEBOY/static/media/redG.c186828b024e84fd9f46.png",
+    "static/media/gameOG.png": "/eShop_GAMEBOY/static/media/gameOG.71ebd3bc52b419425dcc.png",
+    "static/media/Advance.png": "/eShop_GAMEBOY/static/media/Advance.beea9973b7ba7fa3a1f0.png",
+    "static/media/RG.png": "/eShop_GAMEBOY/static/media/RG.3f46f96478a194c4e09d.png",
+    "static/media/GameBleu.png": "/eShop_GAMEBOY/static/media/GameBleu.cd80f0314f9b78fdaa20.png",
+    "static/media/gameP.png": "/eShop_GAMEBOY/static/media/gameP.12c6f1d208692260fc4d.png",
+    "static/media/MolemGame.png": "/eShop_GAMEBOY/static/media/MolemGame.4d0918c73fe6ba7c0a3d.png",
+    "static/media/BG.JPG": "/eShop_GAMEBOY/static/media/BG.6680fdf2a297fbfd6326.JPG",
+    "index.html": "/eShop_GAMEBOY/index.html",
+    "main.35c36ae3.css.map": "/eShop_GAMEBOY/static/css/main.35c36ae3.css.map",
+    "main.894a1f93.js.map": "/eShop_GAMEBOY/static/js/main.894a1f93.js.map"
   },
   "entrypoints": [
-    "static/css/main.936ad9bd.css",
-    "static/js/main.b69bbf31.js"
+    "static/css/main.35c36ae3.css",
+    "static/js/main.894a1f93.js"
   ]
 }

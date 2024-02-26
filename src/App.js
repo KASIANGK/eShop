@@ -17,7 +17,7 @@ import GameBleu from '../src/assets/GameBleu.png'
 import RG from '../src/assets/RG.png'
 import BTNBASKET from '../src/assets/BTNBASKET.png'
 import Footer from './Components/Footer/Footer'
-
+import Intro from './Components/Intro/Intro'
 
 
 function App() {
@@ -151,6 +151,10 @@ function backProduct(product) {
                 </div>
                 <img src={BTNBASKET} className='BTN-OPEN' onClick={openModal}/>
             </div>
+
+            {/* <div className='INTRO-ALL'>
+                <Intro></Intro>
+            </div> */}
 
             <div className='SHOP-ALL'>
                 <h1 className='TITLE'>AVAILABLE PRODUCTS</h1>

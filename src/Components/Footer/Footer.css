@@ -2,6 +2,13 @@
     margin-top: 15%;
 }
 .FOOTER-CONTER {
-    background-image: url(../../assets/BG.JPG);
+    background-image: url(../../assets/back.png);
     color: white;
+}
+
+.FOOTER-TXT {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
